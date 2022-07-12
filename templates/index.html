@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+<h3>Dessert Menu</h3>
 
-{% block title %} Welcome to the home page {% endblock %}
+<ul>
+{% for dessert in desserts %}
+    <li>{{ dessert.name }} - ${{ dessert.price }}, {{ dessert.calories }} calories
+{% endfor %}
+</ul>
 
-
-{% block body %}
-  <h2> Hello world! </h2>
-  <img src="{{ url_for('static', filename='images/flask.png') }}" />
-{% endblock %}
+<a href="/add">Add Item</a>
